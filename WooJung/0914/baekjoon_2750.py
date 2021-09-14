@@ -9,13 +9,13 @@ for n in numb:
 for i in range(len(numb)):
   for j in range(len(numb)):
     if numb[i] < numb[j]:
-      numb[i], num[j] = num[j], num[i]
+      numb[i], numb[j] = numb[j], numb[i]
       
  
 ## Insert Sort
 for i in range(1, len(numb)):
-  while (i>0) & (num[i] < num[i-1]):
-    num[i], num[i-1] = num[i-1], num[i]
+  while (i>0) & (numb[i] < numb[i-1]):
+    numb[i], numb[i-1] = numb[i-1], numb[i]
     
     i -= 1
     
