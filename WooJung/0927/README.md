@@ -20,13 +20,28 @@ def bfs(v):
     if visit[i] == 0 and s[v][i] == 1:
       dfs(i)
 ```
+```python
+def DFS_with_adj_list(graph, root):
+    visited = []
+    stack = [root]
 
+    while stack:
+        n = stack.pop()
+        if n not in visited:
+            visited.append(n)
+            stack += graph[n] - set(visited)
+    return visited
+
+print(BFS_with_adj_list(graph_list, root_node))
+```
 
 ## BFS(너비 우선 탐색)
+**시작점인 루트노드와 같은 거리에 있는 노드를 우선으로 방문**
 - 큐를 이용하여 문제 풀이 가능
 - 탐색 시작 노드를 큐에 삽입하고 방문 처리를 함
 - 큐에서 노드를 꺼내 해당 노드의 인접 노드 중 방문하지 않은 노드를 모두 큐에 삽입하고 방문처리함
 - 2번의 과정을 더이상 수행할 수 없을 때까지 반복
+  - 노드를 방문하면서 인접한 노드 중 방문하지 않았던 노드의 정보만 큐에 넣어 먼저 큐에 들어있던 노드부터 방문하면 되는 것
 
 
 ```python
@@ -42,6 +57,23 @@ def bfs(v):
       if visit[i] == 1 and s[v][i] == 1:
         queue.append(i)
         visit[i] = 0
+```
+
+```python
+from collections import deque
+
+def BFS_with_adj_list(graph, root):
+    visited = []
+    queue = deque([root])
+
+    while queue:
+        n = queue.popleft()
+        if n not in visited:
+            visited.append(n)
+            queue += graph[n] - set(visited)
+    return visited
+  
+print(BFS_with_adj_list(graph_list, root_node))
 ```
 
 ![image](https://user-images.githubusercontent.com/72767245/135285786-685207aa-8f34-43e0-9b70-1473eb99755a.png)
