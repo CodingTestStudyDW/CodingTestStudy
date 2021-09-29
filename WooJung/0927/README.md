@@ -43,3 +43,7 @@ def bfs(v):
         queue.append(i)
         visit[i] = 0
 ```
+
+![image](https://user-images.githubusercontent.com/72767245/135285786-685207aa-8f34-43e0-9b70-1473eb99755a.png)
+
+
