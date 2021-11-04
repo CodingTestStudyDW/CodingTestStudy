@@ -24,7 +24,6 @@ for _ in range(T):
             x -= dx[d]
             y -= dy[d]
             
-        # 최소 행/열, 최대 행/열 값 갱신
         min_x = min(min_x, x)
         min_y = min(min_y, y)
         max_x = max(max_x, x)
