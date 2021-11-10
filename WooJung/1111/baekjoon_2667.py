@@ -1,10 +1,11 @@
 from collections import deque
 
-def bfs(graph, x, y):
+def bfs(array, x, y):
     queue = deque()
     queue.append((x, y))
     count = 0
     while queue:
+        x, y = queue.popleft()
         for i in range(4):
             nx, ny = x+dx[i], y+dy[i]
             if 0<=nx<N and 0<=ny<N and array[nx][ny] == 1: #한번도 방문하지않은 집이 있는 표시
